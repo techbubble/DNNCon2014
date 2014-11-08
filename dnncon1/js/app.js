@@ -1,33 +1,62 @@
+'use strict';
 
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-        navigator.splashscreen.hide();
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+// Call the AngularJS module 'famousDNN'                
+angular.module('famousDNN').controller('MainController', function ($scope, $famous) {
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
-    }
-};
+      // Import famous modules
+      var Transitionable = $famous['famous/transitions/Transitionable'];
+
+      
+      /************************ DEMO 1 ************************/
+      // [ DEMO 1 dependencies ]
+ 
+      
+      /************************ DEMO 2+3+4 ********************/
+      // [ DEMO 2+3+4 dependencies ]
+          
+      var app =  {
+            // Application Constructor
+            initialize: function() {
+                this.bindEvents();
+            },
+              
+            // Bind Event Listeners
+            bindEvents: function() {
+                // We need this because the mobile device needs to have initialized
+                // state before we attempt to execute code
+                document.addEventListener('deviceready', this.onDeviceReady, false);
+            },
+    
+            // Device is ready, let's go!  
+            onDeviceReady: function() {
+    
+                navigator.splashscreen.hide();
+    
+                /************************ DEMO 1 ************************/
+                // [ DEMO 1 code ]
+                
+    
+                
+                /************************ DEMO 2 ************************/   
+                // [ DEMO 2 code ]
+                
+                
+                
+                /************************ DEMO 3 ************************/   
+                // [ DEMO 3 code ]            
+ 
+                
+                
+                /************************ DEMO 4 ************************/   
+                // [ DEMO 4 code ]            
+                                    
+                
+              } // onDeviceReady
+              
+        }; // app
+
+      app.initialize();
+
+}); // famousDNN
+    

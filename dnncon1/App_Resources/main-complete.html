@@ -1,0 +1,39 @@
+<fa-app class="full-screen">
+
+  <!-- DEMO 1 -->
+  <!-- DEMO 1 MARKUP -->
+  <fa-modifier fa-origin="[.5, .5]" fa-rotate-y="rotateY.get()">
+    <fa-surface fa-size="[true, true]" fa-color="'rgb(255,255,250)'">
+      <img class="logo" src="img/dnnlogo.png" style="width: 225px; height: 230px;"/>
+    </fa-surface>
+
+    <fa-modifier fa-rotate-y="3.14159">
+      <fa-surface fa-size="[true, true]" fa-color="'rgb(255,255,250)'">
+        <img class="logo" src="img/dnnlogo.png" style="width: 225px; height: 230px;" />
+      </fa-surface>
+    </fa-modifier>
+  </fa-modifier>
+
+  <fa-modifier fa-origin="[.5, .9]" fa-size="[250, 100]">
+    <fa-surface>
+        <input type="radio" value="10.0" ng-model="value" name="speed" ng-change="changeSpeed(value)" checked><span>Slow</span>
+        <input type="radio" value="50.0" ng-model="value" name="speed" ng-change="changeSpeed(value)"><span>Medium</span>
+        <input type="radio" value="100.0" ng-model="value" name="speed" ng-change="changeSpeed(value)"><span>Fast</span>        
+    </fa-surface>
+  </fa-modifier>
+  
+  <!-- DEMO 2 -->  
+  <!-- DEMO 2 MARKUP -->
+  <fa-grid-layout fa-options="gridLayoutOptions">
+	  <fa-modifier ng-repeat="item in list"
+	               fa-size="[100, 100]"
+	               fa-origin="[0.5, 0.5]"
+	               fa-align="[0.5, 0.5]"
+	               fa-rotate-z="item.rotate.get()">
+		  <fa-surface fa-background-color="item.bgColor" fa-click="spin($index)">
+		  	{{item.content}}
+		  </fa-surface>
+	  </fa-modifier>
+  </fa-grid-layout>
+
+</fa-app>
